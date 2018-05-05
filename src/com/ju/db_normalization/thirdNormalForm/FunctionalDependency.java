@@ -59,20 +59,12 @@ public class FunctionalDependency {
     }
 
     @Override
-    protected Object clone() throws CloneNotSupportedException {
-        return super.clone();
-    }
-
-    @Override
     public int hashCode() {
-
         return Objects.hash(lhs, rhs);
     }
 
     @Override
     public String toString() {
-        return "{" + lhs +
-                "-->" + rhs +
-                '}';
+        return "{" + lhs + "-->" + rhs + '}';
     }
 }
