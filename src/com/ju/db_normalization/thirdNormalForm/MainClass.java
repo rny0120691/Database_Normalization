@@ -14,6 +14,8 @@ public class MainClass {
         Normalization normalization = new Normalization(fds, schema);
         normalization.computeCanonicalCover();
         CandidateKeyEvaluator candidateKeyEvaluator = new CandidateKeyEvaluator();
+        System.out.println("\n-----------------Testing Candidate Keys Possibility-----------------\n");
+        candidateKeyEvaluator.testPossibility(fds, schema);
         Set<Set<Attribute>> candidateKeys = candidateKeyEvaluator.findCandidateKeys(fds, schema);
         System.out.println("\n-------------------------Candidate Keys are-------------------------\n");
         System.out.println(candidateKeys);
@@ -23,7 +25,7 @@ public class MainClass {
 
     private static HashSet<Attribute> getSchemaFromConsole(Scanner sc) {
         String input;
-        System.out.println("Enter schema in the form ABCDE");
+        System.out.println("Enter schema in the form ABCDE then press enter: ");
         input = sc.nextLine();
 
         char[] chars = input.toCharArray();
@@ -37,7 +39,7 @@ public class MainClass {
 
     private static Set<FunctionalDependency> getFdSFromConsole(Scanner sc) {
         String input;
-        System.out.println("Enter fd's separated by comma example: CD->A, EC->H ");
+        System.out.println("Enter fd's separated by comma example: \"CD->A, EC->H\" ");
         input = sc.nextLine();
         StringTokenizer st = new StringTokenizer(input, ","); // comma as delimiter
         Set<FunctionalDependency> fds = new LinkedHashSet<>();
@@ -48,6 +50,4 @@ public class MainClass {
         }
         return fds;
     }
-
-
 }

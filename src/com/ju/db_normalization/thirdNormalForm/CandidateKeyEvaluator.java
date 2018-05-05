@@ -1,20 +1,19 @@
 import java.util.*;
 
 public class CandidateKeyEvaluator {
-    private HashSet<Attribute> obligatoryCandidateKey;
-    private HashSet<Attribute> possibleCandidateKey;
-    private HashSet<Attribute> notCandidateKey;
+    private Set<Attribute> obligatoryCandidateKey;
+    private Set<Attribute> possibleCandidateKey;
+    private Set<Attribute> notCandidateKey;
 
     CandidateKeyEvaluator() {
-        obligatoryCandidateKey = new HashSet<>();
-        possibleCandidateKey = new HashSet<>();
-        notCandidateKey = new HashSet<>();
+        obligatoryCandidateKey = new LinkedHashSet<>();
+        possibleCandidateKey = new LinkedHashSet<>();
+        notCandidateKey = new LinkedHashSet<>();
     }
 
     Set<Set<Attribute>> findCandidateKeys(Set<FunctionalDependency> fds, Set<Attribute> schema) {
         Set<Set<Attribute>> candidateKeys = new HashSet<>();
         Set<Set<Attribute>> newCandidateKeys;
-        testPossibility(fds, schema);
         Set<Attribute> key = new HashSet<>(obligatoryCandidateKey);
         if (isCandidateKey(fds, key, schema)) {
             candidateKeys.add(key);
@@ -46,7 +45,7 @@ public class CandidateKeyEvaluator {
         return result.equals(schema);
     }
 
-    private void testPossibility(Set<FunctionalDependency> fds, Set<Attribute> attributes) {
+    void testPossibility(Set<FunctionalDependency> fds, Set<Attribute> attributes) {
         for (Attribute attribute : attributes) {
             testPossibility(fds, attribute);
         }
