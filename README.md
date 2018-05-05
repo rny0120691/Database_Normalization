@@ -38,14 +38,14 @@ OR
 
 -----------------Testing Candidate Keys Possibility-----------------
 
-A not part of the key
-B can be part of the key
-C can be part of the key
-D can be part of the key
-E must be part of the key
-F must be part of the key
-G must be part of the key
-H can be part of the key
+- A not part of the key
+- B can be part of the key
+- C can be part of the key
+- D can be part of the key
+- E must be part of the key
+- F must be part of the key
+- G must be part of the key
+- H can be part of the key
 
 -------------------------Candidate Keys are-------------------------
 
