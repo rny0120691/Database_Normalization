@@ -5,8 +5,9 @@ This project is an implementation of functional dependencies and normalization t
 To run this project you can either:
 
    Run the MainClass.Java:
-	1. Input the schema from the console you want in the form of ABCDE and press Enter
-	2. Input the Functional dependencies from the console seperated by comma ex. AB->C, CD->E and press Enter
+   
+	1. Input the schema from the console you want in the form of ABCDE and press Enter.
+	2. Input the Functional dependencies from the console seperated by comma ex. AB->C, CD->E and press Enter.
 
 	ps.I have added a schema and functional dependencies as a comment 
            at the start of the program in case you want to paste them to the console easily.
