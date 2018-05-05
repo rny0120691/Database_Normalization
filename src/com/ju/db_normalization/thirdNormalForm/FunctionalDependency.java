@@ -36,12 +36,12 @@ public class FunctionalDependency {
     static FunctionalDependency convertStringToFd(String fd) {
         String[] strings = fd.split("->");
         FunctionalDependency fdd = new FunctionalDependency();
-        HashSet<Attribute> lhs = new HashSet<>();
+        Set<Attribute> lhs = new LinkedHashSet<>();
         for (char c : strings[0].toCharArray()) {
             lhs.add(new Attribute(c));
         }
         fdd.setLhs(lhs);
-        HashSet<Attribute> rhs = new HashSet<>();
+        Set<Attribute> rhs = new LinkedHashSet<>();
         for (char c : strings[1].toCharArray()) {
             rhs.add(new Attribute(c));
         }
