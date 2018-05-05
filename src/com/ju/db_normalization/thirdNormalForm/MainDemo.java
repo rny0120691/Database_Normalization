@@ -17,6 +17,8 @@ public class MainDemo {
         System.out.println("\n--------------------------------------------------------------------\n");
 
         CandidateKeyEvaluator candidateKeyEvaluator = new CandidateKeyEvaluator();
+        System.out.println("\n-----------------Testing Candidate Keys Possibility-----------------\n");
+        candidateKeyEvaluator.testPossibility(functionalDependencies, schema);
         Set<Set<Attribute>> candidateKeys = candidateKeyEvaluator.findCandidateKeys(functionalDependencies, schema);
         System.out.println("\n-------------------------Candidate Keys are-------------------------\n");
         System.out.println(candidateKeys);
